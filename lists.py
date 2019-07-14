@@ -77,7 +77,15 @@ def smallest_int(numbers):
         True
     """
 
-    return 100
+    # make variable to save smallest num
+    smallest_num = None
+
+    # iterate thru nums and add smallest to variable, then return
+    for num in numbers:
+        if smallest_num == None or num < smallest_num:
+            smallest_num = num
+
+    return smallest_num
 
 
 def largest_int(numbers):
@@ -97,7 +105,14 @@ def largest_int(numbers):
         True
     """
 
-    return 0
+    largest_num = None
+
+    # iterate thru nums and add biggest to variable, then return
+    for num in numbers:
+        if largest_num == None or num > largest_num:
+            largest_num = num
+
+    return largest_num
 
 
 def halvesies(numbers):
@@ -115,7 +130,8 @@ def halvesies(numbers):
         [0.5, 2.5]
     """
 
-    return []
+    # iterate thru numbers, convert to float, and cut in half, return new list
+    return [float(number) / 2 for number in numbers]
 
 
 def word_lengths(words):
@@ -127,7 +143,7 @@ def word_lengths(words):
         [5, 3, 5, 4]
     """
 
-    return []
+    return [len(word) for word in words]
 
 
 def sum_numbers(numbers):
@@ -146,7 +162,13 @@ def sum_numbers(numbers):
         0
     """
 
-    return None
+    #iterate thru list and add each to sum
+    num_sum = 0
+
+    for number in numbers:
+        num_sum += number
+    
+    return num_sum
 
 
 def mult_numbers(numbers):
@@ -168,8 +190,13 @@ def mult_numbers(numbers):
         >>> mult_numbers([])
         1
     """
+    #iterate thru list and multiply product by each
+    num_product = 1
 
-    return None
+    for number in numbers:
+        num_product *= number
+    
+    return num_product
 
 
 def join_strings(words):
@@ -188,7 +215,13 @@ def join_strings(words):
         ''
     """
 
-    return "Not the right thing"
+    # iterate thru list and add each string to new string, then return
+    joined_words = ''
+    
+    for word in words:
+        joined_words += word
+
+    return joined_words
 
 
 def average(numbers):
@@ -210,7 +243,13 @@ def average(numbers):
     a feel free to provide a good solution here.)
     """
 
-    return 0
+    # try, else return "must input number"
+    # get sum of numbers, divide by length of numbers
+
+    try:
+        return sum(numbers) / len(numbers)
+    except (TypeError, ZeroDivisionError):
+        print('Please input a number as an argument.')
 
 
 def join_strings_with_comma(words):
@@ -230,7 +269,16 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    # iterate thru list and add each string to new string + comma, then return
+    joined_words = ''
+    
+    for word in words:
+        if joined_words == '':
+            joined_words += word
+        else:
+            joined_words += f", {word}"
+
+    return joined_words
 
 
 def reverse_list(items):
@@ -254,7 +302,7 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    return items[::-1]
 
 
 def reverse_list_in_place(items):
@@ -277,7 +325,11 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+    # reverse list and save to slice of full list
+    items[:] = items [::-1]
+
+    return items
+
 
 
 def duplicates(items):
