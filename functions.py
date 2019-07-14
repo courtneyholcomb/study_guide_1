@@ -64,6 +64,96 @@ PART TWO:
 
 """
 
+
+def hello_world():
+    """Prints 'Hello World'."""
+    print("Hello World")
+
+
+def say_hi(word):
+    """Prints "Hi `word`"."""
+    print(f"Hi {word}")
+
+
+def print_product(num1, num2):
+    """Multiplies inputs and returns the result."""
+    return num1 * num2
+
+
+def repeat_string(word, n):
+    """Prints `word` n times in a row."""
+    print(word * n)
+
+def print_sign(num):
+    """Prints the written version of `num`'s sign."""
+
+    if num > 0:
+        print("Higher than 0")
+
+    if num == 0:
+        print("Zero")
+
+    if num < 0:
+        print("Lower than 0")
+
+
+def is_divisible_by_three(num):
+    """Checks if `num` is divisible by 3 and returns True/False."""
+
+    if num % 3 == 0:
+        return True
+
+    else:
+        return False
+
+
+def num_spaces(sentence):
+    """Returns the number of spaces in `sentence`."""
+    return sentence.count(' ')
+
+
+def total_meal_price(base_price, tax=0.15):
+    """Calculates toatl meal price, including `tax`.
+
+    `tax` defaults to 0.15 if not specified.
+    """
+
+    return base_price * (1 + tax)
+
+def sign_and_parity(num):
+    """Returns the sign and parity of `num`."""
+    sign_parity = []
+
+    if num > 0:
+        sign_parity.append('Positive')
+    elif num < 0:
+        sign_parity.append('Negative')
+    elif num == 0:
+        sign_parity.append('Zero')
+
+    if num % 2 == 0:
+        sign_parity.append('Even')
+    else:
+        sign_parity.append('Odd')
+
+    return sign_parity
+
+
+def full_title(name, honorific='Engineer'):
+    """Returns the full title of `name`, including the `honorific` (prefix).
+
+    If no `honorific` specified, defaults to 'Engineer'.
+    """
+
+    return f"{honorific} {name}"
+
+
+def write_letter(addressee, honorific, writer_name):
+    """Write a nice letter to `name`."""
+    addressee_title = full_title(addressee, honorific)
+    print(f"Dear {addressee_title}, I think you are amazing! Sincerely, {writer_name}")
+
+
 ###############################################################################
 
 # PART ONE
